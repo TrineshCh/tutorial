@@ -1,0 +1,45 @@
+GET http://localhost:3000/todos/?status=TO%20DO
+###
+
+GET http://localhost:3000/todos/?priority=HIGH
+###
+GET http://localhost:3000/todos/?priority=LOW&status=DONE
+###
+GET http://localhost:3000/todos/?search_q=Play
+###
+GET http://localhost:3000/todos/2/
+###
+
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+  "id": 16,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO"
+}
+###
+
+PUT http://localhost:3000/todos/10/
+Content-Type: application/json
+
+{
+    "status": "DONE"
+}
+###
+PUT http://localhost:3000/todos/2/
+Content-Type: application/json
+
+{
+    "priority": "HIGH"
+}
+###
+PUT http://localhost:3000/todos/2/
+Content-Type: application/json
+
+{
+    "todo": "Some task"
+}
+###
+DELETE  http://localhost:3000/todos/3
